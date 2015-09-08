@@ -2,8 +2,10 @@ __author__ = 'vimsree'
 
 import random
 
+# Dawkins weasel problem - Dembski's method.
+# http://rationalwiki.org/wiki/Dawkins_weasel#Implementation
 
-def monkeyonkeyboard():
+def dembskis_method():
     match_string = "methinks it is like a weasel"
     match_length = len(match_string)
     position_array = list(range(0, match_length))
@@ -24,14 +26,13 @@ def generatestring(position_array, string_out, match_length):
         for i in range(match_length):
             generated_string = generated_string+(random.choice(' abcdefghijklmnopqrstuvwxyxz'))
         print("Source Strand:\t %s"%(generated_string))
-        return generated_string
     else:
         generated_list = list(string_out)
         for position in position_array:
             generated_list[position] = random.choice(' abcdefghijklmnopqrstuvwxyxz')
         generated_string = ''.join(generated_list)
         print("Mutated Strand:\t %s"%(generated_string))
-        return generated_string
+    return generated_string
 
 
 def checkandmutatestrand(match_string, generated_string):
@@ -41,4 +42,4 @@ def checkandmutatestrand(match_string, generated_string):
             position_array.append(number)
     return position_array
 
-monkeyonkeyboard()
+dembskis_method()

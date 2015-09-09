@@ -34,11 +34,17 @@ class Function:
         common_divisor = greatest_common_divisor(new_numerator,new_denominator)
         return str(new_numerator // common_divisor)+'/'+str(new_denominator // common_divisor)
 
-    def __mul__(self, other):
-        pass
+    def __mul__(self, other_fraction):
+        new_numerator = self.numerator*other_fraction.numerator
+        new_denominator = self.denominator*other_fraction.denominator
+        common_divisor = greatest_common_divisor(new_numerator,new_denominator)
+        return str(new_numerator // common_divisor)+'/'+str(new_denominator // common_divisor)
 
-    def __divmod__(self, other):
-        pass
+    def __divmod__(self, other_fraction):
+        new_numerator = self.numerator*other_fraction.denominator
+        new_denominator = self.denominator*other_fraction.numerator
+        common_divisor = greatest_common_divisor(new_numerator,new_denominator)
+        return str(new_numerator // common_divisor)+'/'+str(new_denominator // common_divisor)
 
 f1 = Function(3,4)
 f2 = Function(1,3)
@@ -47,3 +53,5 @@ print(f2)
 print(f1.__add__(f2))
 print(f2.__eq__(f1))
 print(f1.__sub__(f2))
+print(f1.__mul__(f2))
+print(f2.__divmod__(f1))

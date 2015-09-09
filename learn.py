@@ -10,4 +10,4 @@ def gcd(m, n):
         print('new m:',m,',new n:',n)
     return n
 
-print(gcd(6, 8))
+print(gcd(6, 20))

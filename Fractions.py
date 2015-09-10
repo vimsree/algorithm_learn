@@ -8,7 +8,7 @@ def greatest_common_divisor(number1, number2):
         number2 = old_number1 % old_number2
     return number2
 
-class Function:
+class Fractions:
 
     def __init__(self,top,bottom):
         self.numerator = top
@@ -51,13 +51,16 @@ class Function:
         right_numerator = self.denominator*other_fraction.numerator
         return self.__str__()+" is greater than "+other_fraction.__str__() if left_numerator > right_numerator else self.__str__()+" is lesser than "+other_fraction.__str__()
 
-f1 = Function(5,4)
-f2 = Function(7,3)
+
+# Fraction calls
+
+f1 = Fractions(5,4)
+f2 = Fractions(7,3)
 print(f1)
 print(f2)
-print(f1.__add__(f2))
-print(f2.__eq__(f1))
-print(f1.__sub__(f2))
-print(f1.__mul__(f2))
-print(f2.__divmod__(f1))
-print(f1.__cmp__(f2))
+print("Addition of two Fractions:", f1.__add__(f2))
+print("Subtraction of two Fractions:", f1.__sub__(f2))
+print("Multiplication of two Fractions:", f1.__mul__(f2))
+print("Division of two Fractions:", f2.__divmod__(f1))
+print('Are two Fractions equal:', f2.__eq__(f1))
+print("Comparison of two Fractions:", f1.__cmp__(f2))

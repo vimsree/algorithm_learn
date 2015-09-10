@@ -46,8 +46,13 @@ class Function:
         common_divisor = greatest_common_divisor(new_numerator,new_denominator)
         return str(new_numerator // common_divisor)+'/'+str(new_denominator // common_divisor)
 
-f1 = Function(3,4)
-f2 = Function(1,3)
+    def __cmp__(self, other_fraction):
+        left_numerator = self.numerator*other_fraction.denominator
+        right_numerator = self.denominator*other_fraction.numerator
+        return self.__str__()+" is greater than "+other_fraction.__str__() if left_numerator > right_numerator else self.__str__()+" is lesser than "+other_fraction.__str__()
+
+f1 = Function(5,4)
+f2 = Function(7,3)
 print(f1)
 print(f2)
 print(f1.__add__(f2))
@@ -55,3 +60,4 @@ print(f2.__eq__(f1))
 print(f1.__sub__(f2))
 print(f1.__mul__(f2))
 print(f2.__divmod__(f1))
+print(f1.__cmp__(f2))
